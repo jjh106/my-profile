@@ -3,7 +3,8 @@
 		<router-view name="gnb"></router-view>
 		<transition name="slide" mode="out-in">
 			<router-view></router-view>
-		</transition>		
+		</transition>
+		<router-view name="foot"></router-view>		
   </div>
 </template>
 
@@ -26,10 +27,20 @@ export default {
 		box-sizing: border-box;
 	}
 	
-	a:link, a:visited{
+	html {
+		font-size: 16px;
+	}
+
+	html,body,div,header,nav,section,aside,article,footer,figure,figcaption,
+	ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,p,fieldset {
+		margin:0;
+		padding:0;
+	}
+
+	 a {
   	text-decoration: none;
 		color: black;
-	}
+	} 
 
 	button {
   	background: none;
@@ -38,6 +49,12 @@ export default {
   	padding: 0;
   	margin: 0;
 		outline: none;
+	}
+
+	#app {
+		display: flex;
+		justify-content: center;
+		flex-flow: row wrap;
 	}
 
 	/* slide animation */
@@ -76,12 +93,16 @@ export default {
 		}
 	}
 
-	.current-page {
-		color: #56c9e2; 
-	}
+	/* .header a {
+		color: #2c3e50;
+	} */
 
+	.current-page {
+		color: #7387c3; 
+	}
+	
 	.gnb li {
 	 	list-style: none;
-		 display: inline-block;
-  }
+		display: inline-block;
+	}
 </style>

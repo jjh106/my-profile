@@ -1,19 +1,28 @@
 <template>
-	<p>i am home page</p>
+	<div class="home-wrapper">
+		<intro></intro>
+		<experience></experience>
+	</div>
 </template>
 
 <script>
+import Intro from '../Intro.vue'
+import Experience from './Experience.vue'
 export default {
   data () {
     return {
 
     }
-  }
+	},
+	components: {
+		Intro,
+		Experience
+	}
 }
 </script>
 
 <style scoped>
- p {
-	 background: red;
- }
+	.home-wrapper {
+		width: 70%;
+	}
 </style>
