@@ -19,7 +19,7 @@ export default {
 <style scoped>
 	.intro {
 		font-size: 2rem;
-		padding: 200px 300px 200px 0px;
+		padding: 150px 300px 150px 0px;
 		font-weight: bold;
 		color: #2c3e50;
 		border-bottom: 2px solid #eee; 

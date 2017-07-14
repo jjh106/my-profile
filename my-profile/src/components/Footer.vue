@@ -22,7 +22,6 @@ export default {
 		text-align: center;
 		border-top: 2px solid #eee;
 		padding: 30px 0;
-		margin-top: 30px;
 	}
 	.footer a {
 		width: 100%;

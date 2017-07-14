@@ -74,7 +74,7 @@ export default {
 /* slide-in setting */
 	@keyframes slide-in {
 		from {
-			transform: translateX(-100%);
+			transform: translateX(100%);
 		}
 		to {
 			transform: translateX(0);
@@ -88,7 +88,7 @@ export default {
 			transform: translateX(0);
 		}
 		to {
-			transform: translateX(100%);
+			transform: translateX(-100%);
 			opacity: 1;
 		}
 	}
