@@ -1,15 +1,15 @@
 <template>
 	<div class="todo-wrapper">
 		<intro></intro>
-		<todo-list></todo-list>
-		<!-- <todos></todos> -->
+		<!-- <todo-list></todo-list> -->
+		 <todos></todos> 
 	</div>
 </template>
 
 <script>
 import Intro from '../Intro.vue'
-import TodoList from './TodoList.vue'
-// import Todos from './Todos.vue'
+// import TodoList from './TodoList.vue'
+import Todos from './Todos.vue'
 export default {
   data () {
     return {
@@ -17,8 +17,8 @@ export default {
 	},
 	components: {
 		Intro,
-		TodoList
-		// Todos
+		// TodoList
+		Todos
 	}
 }
 </script>
