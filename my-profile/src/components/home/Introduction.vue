@@ -1,16 +1,17 @@
 <template>
-	<div class="experience-wrapper">
-		<h2 class="experience-heading">Experience</h2>
+	<div class="introduction-wrapper">
+		<h2 class="introduction-heading">Introduction</h2>
 		<div class="image-wrapper">
-			<div class="image-box">
+			<div class="image-box" @click="showPmodal">
 				<div class="image-img">
 					<img :src="source1" alt="">
 				</div>
 				<div class="image-content">
-					<p class="image-text">이미지 설명</p>
+					<p class="image-text">my profile</p>
 				</div>
 			</div>
-			<div class="image-box">
+			<profile-modal v-if="isShowPmodal" @close="hidePmodal"></profile-modal>
+			<div class="image-box" @click="showSmodal">
 				<div class="image-img">
 					<img :src="source2" alt="">
 				</div>
@@ -18,6 +19,7 @@
 					<p class="image-text">이미지 설명</p>
 				</div>
 			</div>
+			<story-modal v-if="isShowSmodal" @close="hideSmodal"></story-modal>
 			<div class="image-box">
 				<div class="image-img">
 					<img :src="source3" alt="">
@@ -31,25 +33,49 @@
 </template>
 
 <script>
-
+import ProfileModal from './ProfileModal.vue'
+import StoryModal from './StoryModal.vue'
 export default {
+	components: {
+		ProfileModal,
+		StoryModal
+	},
   data () {
     return {
 			source1: '',
 			source2: '',
-			source3: ''
+			source3: '',
+			isShowPmodal: false,
+			isShowSmodal: false
     }
 	},
 	created() {
 		this.source1 = require('../../assets/paris.jpg')
 		this.source2 = require('../../assets/rio.jpg')
 		this.source3 = require('../../assets/san.jpg')
+	},
+	methods: {
+		showPmodal() {
+			this.isShowPmodal = true;
+		},
+		hidePmodal() {
+			this.isShowPmodal = false;
+		},
+		showSmodal() {
+			this.isShowSmodal = true;
+		},
+		hideSmodal() {
+			this.isShowSmodal = false;
+		}
 	}
 }
 </script>
 
 <style scoped>
-	.experience-heading {
+	.introduction-wrapper {
+		border-bottom: 2px solid #eee;
+	}
+	.introduction-heading {
 		text-align: center;
 		margin: 30px 0;
 		color: #2c3e50;
@@ -96,5 +122,6 @@ export default {
 	}
 	.image-box:hover .image-content {
 		opacity: 0.8;
+		cursor: pointer;
 	}
 </style>
