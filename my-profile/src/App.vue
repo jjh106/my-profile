@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-		<router-view name="gnb"></router-view>
+		<router-view name="head"></router-view>
 		<transition name="slide" mode="out-in">
 			<router-view></router-view>
 		</transition>

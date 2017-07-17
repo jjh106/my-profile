@@ -3,17 +3,17 @@
 		{
 			"source": "../assets/github.png",
 			"alt": "대체텍스트",
-			"content": "조경학과 졸업"
+			"content": "11"
 		},
 		{
 			"source": "assets/github.png",
 			"alt": "대체텍스트",
-			"content": "조경 설계*시공회사 인턴"
+			"content": "22"
 		},
 		{
 			"source": "assets/github.png",
 			"alt": "대체텍스트",
-			"content": "패스트캠퍼스 프론트엔드 스쿨 3기"
+			"content": "33"
 		}
 	]
 }

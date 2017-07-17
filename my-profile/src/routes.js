@@ -1,5 +1,5 @@
 // Load Components
-import Navigation from './components/Navigation.vue';
+import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import Home from './components/home/Home.vue';
 import Works from './components/works/Works.vue';
@@ -12,7 +12,7 @@ export const routes = [
 		path: '/', name: "home",
 		components: {
 		  default: Home,
-			gnb: Navigation,
+			head: Header,
 			foot: Footer
 		} 
 	},
@@ -20,7 +20,7 @@ export const routes = [
 		path: '/works',
 	  components: {
 		  default: Works,
-			gnb: Navigation,
+			head: Header,
 			foot: Footer
 		} 
 	},
@@ -28,7 +28,7 @@ export const routes = [
 		path: '/music',
 		components: {
 			default: Music,
-			gnb: Navigation,
+			head: Header,
 			foot: Footer
 		}
 	},
@@ -36,7 +36,7 @@ export const routes = [
 		path: '/todo',
 		components: {
 			default: Todo,
-			gnb: Navigation,
+			head: Header,
 			foot: Footer
 		}
 	},

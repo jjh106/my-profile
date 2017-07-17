@@ -29,7 +29,7 @@ export default {
     }
 	},
 	mounted() {
-		this.$http.get('')
+		this.$http.get('https://profile-e00ba.firebaseio.com/todoList.json')
 							.then( response => {
 								return response.json();
 							})
@@ -41,7 +41,7 @@ export default {
 
 	methods: {
 		addItem() {
-			this.$http.post('', this.todoinput)
+			this.$http.post('https://profile-e00ba.firebaseio.com/todoList.json', this.todoinput)
 								.then( response => console.log(response) )
 								.catch( error => console.error(error.message) )
 			const data = this.todoinput.task;
@@ -49,7 +49,7 @@ export default {
 			this.todoinput.task = '';
 		},
 		removeItem(index) {
-			this.$http.delete('', this.todoinput)
+			this.$http.delete('https://profile-e00ba.firebaseio.com/todoList.json', this.todoinput)
 								.then( response => console.log(response) )
 			this.tasklist.splice(index, 1)
 		}

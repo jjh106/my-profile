@@ -7,9 +7,6 @@ import App from './App.vue'
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
-// global setting
-Vue.http.options.root = 'https://profile-e00ba.firebaseio.com/todoList.json';
-
 const router = new VueRouter({
 	routes
 });
