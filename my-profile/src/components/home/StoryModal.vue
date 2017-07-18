@@ -1,5 +1,5 @@
 <template>
-	<div class="modal-dim" @click="$emit('close')">
+	<div class="modal-dim">
 		<div class="modal-window">
 			<button class="modal-close-btn" type="button" @click="$emit('close')"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></button>
 			<p>fdsfadsfsdfadsfsadfasfasfasfasdfsadfsdfsadfdsfaas
@@ -8,7 +8,12 @@
 				fsadfsdfsdfsadfsadfsfsafsfsfsfsafsdafsfsdfsafsdfsdfsa
 				fsdfsdfsfsdfsdfsdafdsfsdfsdfsafsdafsdfsdfsfsdfsdafsdfas
 				fsdfsdafsdafsdfsdfsdafsdafsdfsadfsadfsadfsafsafsadfs
-				fsdafafsdafasfd
+				fsdafafsdafasfdfsdfsdafsdafsdfsdafsadfsdafsdfsdfsdfsdfsaf
+				fasdfsadfsadfsadfsadfsdfsadfsadfsdafsdfsafsdafsadfsafsdf
+				fasdfsadfsdafsdafsadfsdfsdfsafsadfsdafsdafsdafsadfsa
+				fsadfsadfsadfsdfsadfsadfsafsafasdfasfsdafa
+				fasdfsdafsadfsdfsadfsdafsadfsdfsdfsdafsafsadfsadfsaf
+				sdfsadfsdafsdafsdafsdafsadfsadfsadfsdfsafsafdas
 			</p>
 		</div>
 	</div>
@@ -34,32 +39,31 @@ export default {
 		bottom: 0;
 		left: 0;
 		background: rgba(32, 32, 32, 0.9);
-		cursor: pointer;
 	}
+
 	.modal-window {
 		width: 500px;
-		padding: 30px;
+		padding: 15px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
-		border-radius: 5px;
+		border-radius: 10px;
 		background: rgba(44, 62, 80, 0.9);
-	}
-	.modal-window p {
 		color: #fff;
 	}
+
 	.modal-close-btn {
 		position: absolute;
 		right: -18px;
 		top: -18px;
 		display: inline-block;
 		padding: 3px;
-		color: #fff;
 		cursor: pointer;
 		outline: none;
 	}
+
 	.fa-times-circle {
-		color: pink;
+		color: #ffb03b;
 	}
 </style>

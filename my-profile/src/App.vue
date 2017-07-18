@@ -1,11 +1,13 @@
 <template>
   <div id="app">
-		<router-view name="head"></router-view>
-		<transition name="slide" mode="out-in">
-			<router-view></router-view>
-		</transition>
-		<router-view name="foot"></router-view>		
-  </div>
+		<div class="app-wrapper">
+			<router-view name="head"></router-view>
+			<transition name="slide" mode="out-in">
+				<router-view></router-view>
+			</transition>
+			<router-view name="foot"></router-view>		
+		</div>
+	</div>
 </template>
 
 <script>
@@ -39,7 +41,7 @@ export default {
 
 	 a {
   	text-decoration: none;
-		color: black;
+		color: #2c3e50;
 	} 
 
 	button {
@@ -52,9 +54,21 @@ export default {
 	}
 
 	#app {
+		background: #6dacbd;
+		display: flex;
+		justify-content: center;
+		padding-top: 30px;
+	}
+
+	.app-wrapper {
+		width: 70%;
+		/* min-height: 100vh; */
 		display: flex;
 		justify-content: center;
 		flex-flow: row wrap;
+		background: #f8f8f8;
+		padding: 0 70px;
+		box-shadow: 2px 2px 4px #3e454c, 2px 2px 30px #3e454c;
 	}
 
 	/* slide animation */
@@ -93,12 +107,8 @@ export default {
 		}
 	}
 
-	/* .header a {
-		color: #2c3e50;
-	} */
-
 	.current-page {
-		color: #7387c3; 
+		color: #ffb03b; 
 	}
 	
 	.gnb li {

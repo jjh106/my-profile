@@ -30,12 +30,13 @@ export default {
 		justify-content: space-between;
 		align-items: center;
 		margin: 30px 0 30px 0;
-		width: 70%;
-		border-bottom: 2px solid #eee;
+		 width: 100%; 
+		border-bottom: 1px solid #ccc;
 		font-weight: 700;
 		font-size: 1.1rem;
 		padding-bottom: 15px;
 	}
+	
 	.gnb li {
 		margin-left: 25px;
 	}

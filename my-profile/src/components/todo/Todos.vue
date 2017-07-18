@@ -9,7 +9,7 @@
 				<li v-for="task in tasks" v-if="task.name">
 					<input type="checkbox" v-model="task.done">
 					<span :class="{ taskDone: task.done }">{{ task.name }}</span>
-					<button type="button" @click="deleteItem(task)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>
+					<button class="delete-btn" type="button" @click="deleteItem(task)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>
 				</li>
 			</ul>
 	</div>
@@ -46,7 +46,7 @@ export default {
 	.todos-wrapper h2 {
 		margin: 30px 0;
 		color: #2c3e50;
-		font-size: 2rem;
+		font-size: 2.3rem;
 	}
 	.todo-input {
 		margin: 0 0 20px 30px;
@@ -78,11 +78,14 @@ export default {
 		padding: 5px 0;
 		box-shadow: 2px 2px 4px #bbb, 4px 4px 8px #bbb;
 	}
+	.delete-btn {
+		line-height: 1.5;
+	}
 	.fa-plus {
-		color: #7387c3;
+		color: #ffb03b;
 	}
 	.fa-trash-o {
-		color: #E74C3C;
+		color: #f24c27;
 		vertical-align: top;
 	}
 	.taskDone {

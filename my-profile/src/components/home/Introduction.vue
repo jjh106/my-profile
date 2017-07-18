@@ -2,32 +2,11 @@
 	<div class="introduction-wrapper">
 		<h2 class="introduction-heading">Introduction</h2>
 		<div class="image-wrapper">
-			<div class="image-box" @click="showPmodal">
-				<div class="image-img">
-					<img :src="source1" alt="">
-				</div>
-				<div class="image-content">
-					<p class="image-text">my profile</p>
-				</div>
-			</div>
+			<div class="profile-image" :style="{ backgroundImage: 'url(' + source1 + ')' }" @click="showPmodal"></div>
 			<profile-modal v-if="isShowPmodal" @close="hidePmodal"></profile-modal>
-			<div class="image-box" @click="showSmodal">
-				<div class="image-img">
-					<img :src="source2" alt="">
-				</div>
-				<div class="image-content">
-					<p class="image-text">이미지 설명</p>
-				</div>
-			</div>
+			<div class="story-image" :style="{ backgroundImage: 'url(' + source2 + ')' }" @click="showSmodal"></div>
 			<story-modal v-if="isShowSmodal" @close="hideSmodal"></story-modal>
-			<div class="image-box">
-				<div class="image-img">
-					<img :src="source3" alt="">
-				</div>
-				<div class="image-content">
-					<p class="image-text">이미지 설명</p>
-				</div>
-			</div>
+			<div class="dd-image" :style="{ backgroundImage: 'url(' + source3 + ')' }"></div>
 		</div>
 	</div>
 </template>
@@ -42,9 +21,6 @@ export default {
 	},
   data () {
     return {
-			source1: '',
-			source2: '',
-			source3: '',
 			isShowPmodal: false,
 			isShowSmodal: false
     }
@@ -73,55 +49,64 @@ export default {
 
 <style scoped>
 	.introduction-wrapper {
-		border-bottom: 2px solid #eee;
+		border-bottom: 1px solid #ccc;
 	}
 	.introduction-heading {
 		text-align: center;
 		margin: 30px 0;
 		color: #2c3e50;
-		font-size: 1.8rem;
+		font-size: 2.3rem;
 	}
 	.image-wrapper {
 		display: flex;
-		justify-content: space-between;
+		justify-content: center;
 		flex-flow: row nowrap;
-		margin: 20px 80px 50px 80px;
+		margin-bottom: 30px;
 	}
-	.image-box {
+
+	[class*="-image"] {
 		position: relative;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
 		width: 30%;
+		padding-bottom: 25%;
+		 border-radius: 5px; 
 	}
-	.image-box img {
+
+	[class*="-image"]::after {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
-		padding-top: 25px;
-	}
-	.image-img {
-		width: 100%;
-		height: auto;
-		transition: all .7s ease-in-out;
-	}
-	.image-content {
+		height: 100%;
 		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 0;
-		padding-bottom: 100%;
-		background: #000;
-		opacity: 0;
-		transition: all .7s ease-in-out;
-	}
-	.image-text {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		text-align: center;
-		font-weight: 200;
+		background-color: #000;
+		font-size: 1.6rem;
 		color: #fff;
-	}
-	.image-box:hover .image-content {
-		opacity: 0.8;
+		opacity: 0; 
+		 border-radius: 5px; 
 		cursor: pointer;
+	}
+
+	[class*="-image"]:hover::after {
+		opacity: 0.8;
+		transition: all .4s ease-in-out;
+	}
+
+	.profile-image::after {
+		content: 'Click!! My Profile';
+	}
+
+	.story-image::after {
+		content: 'Click!! My Story';
+	}
+
+	.dd-image::after {
+		content: 'Mountain';
+	}
+
+	.story-image {
+		 margin: 0 30px; 
 	}
 </style>

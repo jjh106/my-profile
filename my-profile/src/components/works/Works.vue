@@ -19,7 +19,7 @@ export default {
 
 <style scoped>
 	.works-wrapper {
-		width: 70%;
+		 width: 100%; 
 	}
 </style>
 

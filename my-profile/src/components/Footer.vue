@@ -18,9 +18,9 @@ export default {
 
 <style scoped>
 	.footer {
-		width: 70%;
+		width: 100%;
 		text-align: center;
-		border-top: 2px solid #eee;
+		border-top: 1px solid #ccc;
 		padding: 30px 0;
 	}
 	.footer a {

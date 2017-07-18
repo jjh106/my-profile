@@ -25,7 +25,7 @@ export default {
 
 <style scoped>
 	.todo-wrapper {
-		width: 70%;
+		 width: 100%; 
 	}
 </style>
 
