@@ -1,16 +1,19 @@
 {
 	"image-list": [
-		{
+		{	
+			"id": 1,
 			"source": "../assets/github.png",
 			"alt": "대체텍스트",
 			"content": "11"
 		},
 		{
+			"id": 2,
 			"source": "assets/github.png",
 			"alt": "대체텍스트",
 			"content": "22"
 		},
 		{
+			"id": 3,
 			"source": "assets/github.png",
 			"alt": "대체텍스트",
 			"content": "33"

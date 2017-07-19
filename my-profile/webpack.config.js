@@ -15,8 +15,11 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-          }
-          // other vue-loader options go here
+          },
+					// other vue-loader options go here
+					// transformToRequire: {
+					// 	audio: "src"
+					// }
         }
       },
       {
@@ -30,7 +33,15 @@ module.exports = {
         options: {
           name: '[name].[ext]?[hash]'
         }
-      }
+			},
+			// {
+      //   test: /\.mp3$/,
+      //   loader: 'url-loader',
+      //   options: {
+      //     limit: 10000,
+      //     name: utils.assetsPath('audio/[name].[hash:7].[ext]')
+      //   }
+      // },
     ]
   },
   resolve: {

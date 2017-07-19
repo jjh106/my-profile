@@ -1,11 +1,11 @@
 <template>
-	<div class="todos-wrapper">
+	<div class="memo-list-wrapper">
 		<h2>Todo List</h2>
-		<div class="todo-input">
-			<input type="text" placeholder="할일을 적어주세요." v-model="tasks.name" @keyup.enter="addItem">
+		<div class="memo-input">
+			<input type="text" placeholder="할 일을 적어주세요." v-model="tasks.name" @keyup.enter="addItem">
 			<button type="button" @click="addItem"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
 		</div>
-			<ul class="todo-list">
+			<ul class="memo-list">
 				<li v-for="task in tasks" v-if="task.name">
 					<input type="checkbox" v-model="task.done">
 					<span :class="{ taskDone: task.done }">{{ task.name }}</span>
@@ -40,18 +40,18 @@ export default {
 </script>
 
 <style scoped>
-	.todos-wrapper {
+	.memo-list-wrapper {
 		text-align: center;
 	}
-	.todos-wrapper h2 {
+	.memo-list-wrapper h2 {
 		margin: 30px 0;
 		color: #2c3e50;
 		font-size: 2.3rem;
 	}
-	.todo-input {
+	.memo-input {
 		margin: 0 0 20px 30px;
 	}
-	.todo-input input {
+	.memo-input input {
 		border: none;
 		outline: none;
 		border-bottom: 2px solid #ccc;
@@ -59,10 +59,10 @@ export default {
 		padding: 10px;
 		font-size: 1rem;
 	}
-	.todo-input button {
+	.memo-input button {
 		vertical-align: middle;
 	}
-	.todo-list {
+	.memo-list {
 		margin: 0 auto 30px;
 		width: 40%;
 		height: 300px;
@@ -72,7 +72,7 @@ export default {
 		line-height: 1.7;
 		padding: 0 10px;
 	}
-	.todo-list li {
+	.memo-list li {
 		margin: 10px 0;
 		border-radius: 30px;
 		padding: 5px 0;
@@ -91,7 +91,7 @@ export default {
 	.taskDone {
 		text-decoration: line-through;
 	}
-	.todo-list {
+	.memo-list {
 		list-style: none;
 	}
 </style>

@@ -4,7 +4,7 @@ import Footer from './components/Footer.vue';
 import Home from './components/home/Home.vue';
 import Works from './components/works/Works.vue';
 import Music from './components/music/Music.vue';
-import Todo from './components/todo/Todo.vue';
+import Memo from './components/memo/Memo.vue';
 
 // Route Setting
 export const routes = [
@@ -33,9 +33,9 @@ export const routes = [
 		}
 	},
 	{
-		path: '/todo',
+		path: '/memo',
 		components: {
-			default: Todo,
+			default: Memo,
 			head: Header,
 			foot: Footer
 		}

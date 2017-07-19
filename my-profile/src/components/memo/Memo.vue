@@ -1,15 +1,15 @@
 <template>
-	<div class="todo-wrapper">
+	<div class="memo-wrapper">
 		<intro></intro>
 		<!-- <todo-list></todo-list> -->
-		 <todos></todos> 
+		 <memo-list></memo-list> 
 	</div>
 </template>
 
 <script>
 import Intro from '../Intro.vue'
 // import TodoList from './TodoList.vue'
-import Todos from './Todos.vue'
+import MemoList from './MemoList.vue'
 export default {
   data () {
     return {
@@ -18,13 +18,13 @@ export default {
 	components: {
 		Intro,
 		// TodoList
-		Todos
+		MemoList
 	}
 }
 </script>
 
 <style scoped>
-	.todo-wrapper {
+	.memo-wrapper {
 		 width: 100%; 
 	}
 </style>
