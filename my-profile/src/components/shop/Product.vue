@@ -8,7 +8,7 @@
 		</p>
 		<div class="controls">
 			<button class="add-btn" @click="addToCart" v-if="qtyInCart === 0">ADD TO CART</button>
-			<div v-else>
+			<div class="clearfix" v-else>
 				<button class="inc" @click="inc">+</button>
 				<button class="dec" @click="dec">-</button>
 			</div>
@@ -17,32 +17,48 @@
 </template>
 
 <script>
+import _ from 'lodash'
+import Stage from '../../CartStage.js'
+
 export default {
 	props: ['product'],
 	data() {
 		return {
-			
+			shared: Stage.data
 		}
 	},
 	methods: {
 		addToCart() {
-
+			Stage.add(this.product)
 		},
 		inc() {
-
+			Stage.inc(this.product)
 		},
 		dec() {
-
+			Stage.dec(this.product)
 		}
 	},
 	computed: {
 		qtyInCart() {
-			return 0
+			var found = _.find(this.shared.cart, ['id', this.product.id])
+			if( found ) {
+				return found.qty
+			} else {
+				return 0
+			}
 		}	
 	}
 }
 </script>
 
 <style scope>
+	.product {
+		float: left;
+		width: 25%;
+		padding: 0.5em 0.5em;
+		max-block-size: 1em;
+	}
+	.image {
 
+	}
 </style>

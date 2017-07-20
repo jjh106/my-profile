@@ -23,20 +23,48 @@
 
 <script>
 import Stage from '../../CartStage.js'
+import _ from 'lodash'
+
 export default {
 	data() {
 		return {
-			item: Stage.data.cart
+			items: Stage.data.cart
 		}
 	},
 	computed: {
 		total() {
-			return 0
+			return _.sumby(this.items, function(item) {
+				return (item.price * item.qty)
+			})
 		}
 	}
 }
 </script>
 
 <style scope>
-
+	.cart {
+		margin-left: 1em;
+	}
+	.cart-title {
+		margin: 0.5em 0 0 0;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 0.75em;
+		background: #35495e;
+		color: #fff;
+	}
+	.cart-empty {
+		text-align: center;
+		margin: 4em 0 0 0;
+		min-height: 300px;
+	}
+	.cart-total {
+		background: #f1f1f1;
+		margin: 0;
+		padding: 0.75em;
+	}
+	.items {
+		min-height: 300px;
+	}
 </style>
