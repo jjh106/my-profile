@@ -7,7 +7,7 @@
 			<ul>
 				<li><router-link to="/" active-class="current-page" exact>HOME</router-link></li>
 				<li><router-link to="/works" active-class="current-page">WORKS</router-link></li>
-				<li><router-link to="/music" active-class="current-page">MUSIC</router-link></li>
+				<li><router-link to="/shop" active-class="current-page">SHOP</router-link></li>
 				<li><router-link to="/memo" active-class="current-page">MEMO</router-link></li>
 			</ul>	
 		</nav>

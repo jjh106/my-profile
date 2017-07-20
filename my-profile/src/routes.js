@@ -3,7 +3,7 @@ import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
 import Home from './components/home/Home.vue';
 import Works from './components/works/Works.vue';
-import Music from './components/music/Music.vue';
+import Shop from './components/shop/Shop.vue';
 import Memo from './components/memo/Memo.vue';
 
 // Route Setting
@@ -25,9 +25,9 @@ export const routes = [
 		} 
 	},
 	{
-		path: '/music',
+		path: '/shop',
 		components: {
-			default: Music,
+			default: Shop,
 			head: Header,
 			foot: Footer
 		}
