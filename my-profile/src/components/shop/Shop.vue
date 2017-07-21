@@ -2,27 +2,31 @@
 	<div class="shop-wrapper">
 		<intro></intro>
 		<div class="shop-container">
-			<!-- <form class="searchbar" @submit.prevent="onSubmit">
-				<input v-model="search" placeholder="Search for images">
-				<input type="submit" value="Search" class="search-btn">
-			</form> -->
+			<h2 class="shop-heading">Shopping Cart</h2>
 			<div class="shopping">
 				<div class="products">
 					<div class="product" v-for="(item, index) in items">
-						<h3 class="product-title">{{ item.title }}</h3>
-						<img class="product-image" :src="item.img">
+						<div class="product-flex">
+							<img class="product-image" :src="item.img">
+							<div class="product-text">
+								<h3 class="product-title">{{ item.title }}</h3>
+								<span>{{ item.price | currency }}</span>
+							</div>
+						</div>
 						<button @click="addItem(index)" class="go-cart">Add to cart</button>
 					</div>
 				</div>
 				<div class="cart">
-					<h2>Shopping Cart</h2>
+					<h2>Cart</h2>
 					<ul>
 						<li class="cart-item" v-for="(item, index) in cart">
 							<img class="item-image" :src="item.img">
-							<div class="item-title">{{ item.title }}</div>
-							<span class="item-qty">{{ item.price | currency }} x {{ item.qty }}</span>
-							<button class="inc-btn" @click="inc(item, index)">+</button>
-							<button class="dec-btn" @click="dec(item, index)">-</button>
+							<div class="item-text">
+								<div class="item-title">{{ item.title }}</div>
+								<p class="item-qty">{{ item.price | currency }} x {{ item.qty }}</p>
+								<button class="inc-btn" @click="inc(item, index)">+</button>
+								<button class="dec-btn" @click="dec(item, index)">-</button>
+							</div>
 						</li>
 					</ul>
 					<div v-if="cart.length">
@@ -49,7 +53,12 @@ export default {
 			items: [
 				{ id: 1, title: 'Item 1', price: 15, img: require('../../assets/github.png') },
 				{ id: 2, title: 'Item 2', price: 9.99, img: require('../../assets/github.png') },
-				{ id: 3, title: 'Item 3', price: 19.89, img: require('../../assets/github.png') }
+				{ id: 3, title: 'Item 3', price: 19.89, img: require('../../assets/github.png') },
+				{ id: 4, title: 'Item 4', price: 9.99, img: require('../../assets/github.png') },
+				{ id: 5, title: 'Item 5', price: 50, img: require('../../assets/github.png') },
+				{ id: 6, title: 'Item 6', price: 45, img: require('../../assets/github.png') },
+				{ id: 7, title: 'Item 7', price: 30, img: require('../../assets/github.png') },
+				{ id: 8, title: 'Item 8', price: 20, img: require('../../assets/github.png') }
 			],
 			cart: [],
 			search: ''
@@ -112,32 +121,85 @@ export default {
 	.shop-wrapper {
 		width: 100%;
 	}
+	.shop-heading {
+		text-align: center;	
+		margin: 30px 0;
+		color: #2c3e50;
+		font-size: 2.3rem;
+	}
 	.shopping {
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 20px;
+		overflow: scroll;
+		height: 750px;
 	}
 	.products {
-		background: pink;
-		width: 70%;
+		width: 50%;
+		/* background: pink; */
+		display: flex;
+		flex-flow: row wrap;
+		border-right: 2px solid #ddd;
 	}
 	.product {
-		width: 15%;
-		background: yellow;
+		width: 49%;
+		padding: 0 20px;
+		margin: 0 auto;
+		/* background: yellow; */
+		margin-bottom: 15px;
+	}
+	.product-flex {
+		display: flex;
+		width: 100%;
+		height: 100px;	
 	}
 	.product-image {
+		width: 50%;
+	}
+	.product-text {
+		width: 50%;
+		padding: 20px 0 0 0;
+		text-align: center;
+	}
+	.product-text h3 {
+		font-size: 1.7rem;
+	}
+	.product-text span {
+		font-size: 1.1rem;
+	}
+	.go-cart {
 		width: 100%;
+		background: blue;
+		padding: 15px 0;
+		margin-top: 10px;
+		font-size: 1.3rem;
 	}
 	.cart {
 		text-align: center;
 		background: skyblue; 
-		width: 30%;
+		width: 50%;
+	}
+	.cart h2 {
+		color: #2c3e50;
+		margin-bottom: 30px;
 	}
 	.cart-item {
 		list-style: none;
 		border-bottom: 1px solid #ddd;
 		width: 100%;
+		display: flex;
+		justify-content: center;
 	}
 	.item-image {
-		width: 20%;
+		width: 80px;
+		height: 65px;
+		background: red;
+	}
+	.item-title {
+
+	}
+	.item-text {
+		background: yellow;
+		margin-left: 20px;
 	}
 </style>
