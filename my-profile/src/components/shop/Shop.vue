@@ -1,6 +1,6 @@
 <template>
 	<div class="shop-wrapper">
-		<intro></intro>
+		<intro :msg="parentMsg"></intro>
 		<div class="shop-container">
 			<h2 class="shop-heading">Shopping Cart</h2>
 			<div class="shopping">
@@ -49,6 +49,7 @@ import Intro from '../Intro.vue'
 export default {
 	data() {
 		return {
+			parentMsg: 'shop text',
 			total: 0,
 			items: [
 				{ id: 1, title: 'Item 1', price: 15, img: require('../../assets/github.png') },
@@ -80,7 +81,6 @@ export default {
 					break;
 				}
 			}
-
 			if( !found ) {
 				this.cart.push({
 					id: item.id,

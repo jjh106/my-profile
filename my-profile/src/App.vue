@@ -69,6 +69,7 @@ export default {
 		background: #f8f8f8;
 		padding: 0 70px;
 		box-shadow: 2px 2px 4px #3e454c, 2px 2px 30px #3e454c;
+		overflow: hidden;
 	}
 
 	/* slide animation */

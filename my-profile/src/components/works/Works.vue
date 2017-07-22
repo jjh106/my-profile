@@ -1,6 +1,6 @@
 <template>
 	<div class="works-wrapper">
-		<intro></intro>
+		<intro :msg="parentMsg"></intro>
 	</div>
 </template>
 
@@ -9,6 +9,7 @@ import Intro from '../Intro.vue'
 export default {
   data () {
     return {
+			parentMsg: 'work text'
     }
 	},
 	components: {

@@ -1,16 +1,16 @@
 <template>
 	<div class="intro">
-		<p>{{message1}}</p>
-		<p>{{message2}}</p>
-	</div>
+		<p>{{ message }}</p>
+		<p>{{ msg }}</p>
+	</div> 
 </template>
 
 <script>
 export default {
-  data () {
+	props: ['msg'],
+  data() {
     return {
-			message1: "text area1",
-			message2: "text area2"
+			message: "text area1"
     }
 	}
 }

@@ -16,9 +16,3 @@ new Vue({
 	router,
   render: h => h(App)
 })
-
-
-
-// RXsiOEMOIk62MhYWmVSY
-
-// 5tU4lO83bc

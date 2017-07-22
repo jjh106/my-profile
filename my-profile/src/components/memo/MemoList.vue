@@ -26,6 +26,9 @@ export default {
 	},
 	methods: {
 		addItem(e) {
+			this.$http.post('https://profile-e00ba.firebaseio.com/todo.json', this.tasks. ) {
+
+			}
 			this.tasks.push({
 				name: this.tasks.name,
 				done: false

@@ -1,24 +1,25 @@
 <template>
 	<div class="memo-wrapper">
-		<intro></intro>
-		<!-- <todo-list></todo-list> -->
-		 <memo-list></memo-list> 
+		<intro :msg="parentMsg"></intro>
+		 <todo-list></todo-list> 
+		 <!-- <memo-list></memo-list>  -->
 	</div>
 </template>
 
 <script>
 import Intro from '../Intro.vue'
-// import TodoList from './TodoList.vue'
-import MemoList from './MemoList.vue'
+import TodoList from './TodoList.vue'
+// import MemoList from './MemoList.vue'
 export default {
   data () {
     return {
+			parentMsg: 'memo text'
     }
 	},
 	components: {
 		Intro,
-		// TodoList
-		MemoList
+		TodoList
+		// MemoList
 	}
 }
 </script>
