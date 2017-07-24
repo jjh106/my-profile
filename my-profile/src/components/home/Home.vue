@@ -1,6 +1,6 @@
 <template>
 	<div class="home-wrapper">
-		<intro :msg="parentMsg"></intro>
+		<intro :parentMsg="msg"></intro>
 		<introduction></introduction>
 		<experience></experience>
 		<interest></interest>
@@ -15,7 +15,7 @@ import Interest from './Interest.vue'
 export default {
   data () {
     return {
-			parentMsg: 'home text'
+			msg: 'home text'
     }
 	},
 	components: {

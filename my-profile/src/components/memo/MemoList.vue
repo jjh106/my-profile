@@ -2,14 +2,14 @@
 	<div class="memo-list-wrapper">
 		<h2>Todo List</h2>
 		<div class="memo-input">
-			<input type="text" placeholder="할 일을 적어주세요." v-model="tasks.name" @keyup.enter="addItem">
+			<input type="text" placeholder="할 일을 적어주세요." v-model="task" @keyup.enter="addItem">
 			<button type="button" @click="addItem"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
 		</div>
 			<ul class="memo-list">
-				<li v-for="task in tasks" v-if="task.name">
-					<input type="checkbox" v-model="task.done">
-					<span :class="{ taskDone: task.done }">{{ task.name }}</span>
-					<button class="delete-btn" type="button" @click="deleteItem(task)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>
+				<li v-for="(data,index) in tasklist" :key="data" v-if="data">
+					<input type="checkbox" v-model="data.done">
+					<span :class="{ taskDone: data.done }">{{ data.task }}</span>
+					<button class="delete-btn" type="button" @click="deleteItem(index)"><i class="fa fa-trash-o fa-lg" aria-hidden="true"></i></button>
 				</li>
 			</ul>
 	</div>
@@ -19,24 +19,38 @@
 export default {
   data () {
     return {
-			tasks: [
-				{ name: '', done: false }
-			]
+			task: '',
+			done: false,
+			tasklist: [],
+			keylist: []
     }
 	},
+	created() {
+		this.$http.get('https://profile-e00ba.firebaseio.com/todoList.json')
+							.then( res => {
+								this.tasklist = Object.values(res.body);
+								this.keylist = Object.keys(res.body);
+							})
+							.catch( err => console.error(err.message) )
+	},
 	methods: {
-		addItem(e) {
-			this.$http.post('https://profile-e00ba.firebaseio.com/todo.json', this.tasks. ) {
-
-			}
-			this.tasks.push({
-				name: this.tasks.name,
-				done: false
-			})
-			this.tasks.name = '';
+		addItem() {
+			const data = {
+				task: this.task,
+				done: this.done
+			};
+			this.$http.post('https://profile-e00ba.firebaseio.com/todoList.json', data)
+								.then( res => this.keylist.push(res.body.name) )
+								.catch( err => console.error(err.message) )
+			this.tasklist.push(data);
+			this.task = '';
 		},
-		deleteItem(task) {
-			this.tasks.splice(this.tasks.indexOf(task), 1)
+		deleteItem(index) {
+			this.$http.delete(`https://profile-e00ba.firebaseio.com/todoList/${this.keylist[index]}.json`)
+								.then( res => {
+									this.tasklist.splice(index, 1);
+									this.keylist.splice(index, 1);
+								})
 		}
 	}
 }
@@ -88,7 +102,7 @@ export default {
 		color: #ffb03b;
 	}
 	.fa-trash-o {
-		color: #f24c27;
+		color: #bd4932;
 		vertical-align: top;
 	}
 	.taskDone {

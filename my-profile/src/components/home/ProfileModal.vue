@@ -7,9 +7,9 @@
 					<img :src="source" alt="증명사진">
 				</div>
 				<div class="profile-content">
-					<span>이 &nbsp; 름 : </span>
-					<span>나 &nbsp; 이 : </span>
-					<span>거주지 : </span>
+					<span>이 &nbsp; 름 : 정재호 </span>
+					<span>나 &nbsp; 이 : 27세 </span>
+					<span>거주지 : 서울특별시 중랑구 상봉동 </span>
 					<span>깃허브 : <a href="https://github.com/jjh106" target="_blank">http://github.com/jjh106</a></span>
 					<span>이메일 : wjdwo0106@gmail.com</span>
 				</div>
