@@ -15,7 +15,7 @@ import Interest from './Interest.vue'
 export default {
   data () {
     return {
-			msg: '간단한 자기소개와 경험, 취미에 관한 페이지입니다.'
+			msg: '간단한 자기소개와 경험, 관심사에 관한 페이지입니다.'
     }
 	},
 	components: {

@@ -2,24 +2,48 @@
 	<div class="experience-wrapper">
 		<h2 class="experience-heading">Experience</h2>
 		<div class="image-wrapper">
-			<div class="major-image" :style="{ backgroundImage: 'url(' + source1 + ')' }"></div>
-			<div class="intern-image" :style="{ backgroundImage: 'url(' + source2 + ')' }"></div>
+			<div class="major-image" :style="{ backgroundImage: 'url(' + source1 + ')' }" @click="showLmodal"><i class="fa fa-plus plus-plus fa-2x" aria-hidden="true"></i></div>
+			<land-modal v-if="isShowLmodal" @close="hideLmodal"></land-modal>
+			<div class="intern-image" :style="{ backgroundImage: 'url(' + source2 + ')' }" @click="showImodal"><i class="fa fa-plus plus-plus fa-2x" aria-hidden="true"></i></div>
+			<intern-modal v-if="isShowImodal" @close="hideImodal"></intern-modal>
 			<div class="fds-image" :style="{ backgroundImage: 'url(' + source3 + ')' }"></div>
 		</div>
 	</div>
 </template>
 
 <script>
+import LandModal from './LandModal.vue'
+import InternModal from './InternModal.vue'
+
 export default {
   data () {
     return {
-
+			isShowLmodal: false,
+			isShowImodal: false
     }
 	},
 	created() {
 		this.source1 = require('../../assets/land.jpg')
 		this.source2 = require('../../assets/coffee.jpg')
 		this.source3 = require('../../assets/fds.jpg')
+	},
+	components: {
+		LandModal,
+		InternModal
+	},
+	methods: {
+		showLmodal() {
+			this.isShowLmodal = true;
+		},
+		hideLmodal() {
+			this.isShowLmodal = false;
+		},
+		showImodal() {
+			this.isShowImodal = true;
+		},
+		hideImodal() {
+			this.isShowImodal = false;
+		}
 	}
 }
 </script>
@@ -77,16 +101,23 @@ export default {
 	}
 
 	.intern-image::after {
-		content: '아르바이트';
+		content: '아르바이트 & 인턴';
 		font-size: 1.2rem;
 	}
 
 	.fds-image::after {
-		content: '패스트캠퍼스 프론트엔드스쿨';
+		content: '패스트캠퍼스 프론트엔드스쿨3기 수료';
 		font-size: 1.2rem;
 	}
 
 	.intern-image {
 		margin: 0 30px;
+		position: relative;
+	}
+	.plus-plus {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		color: #fff;
 	}
 </style>
