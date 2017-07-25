@@ -2,17 +2,13 @@
 	<div class="modal-dim">
 		<div class="modal-window">
 			<button class="modal-close-btn" type="button" @click="$emit('close')"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></button>
-			<div class="profile-wrapper">
-				<div class="profile-image">
-					<img :src="source" alt="증명사진">
-				</div>
-				<div class="profile-content">
-					<span>이 &nbsp; 름 : 정재호 </span>
-					<span>나 &nbsp; 이 : 27세 </span>
-					<span>거주지 : 서울특별시 중랑구 상봉동 </span>
-					<span>깃허브 : <a href="https://github.com/jjh106" target="_blank">http://github.com/jjh106</a></span>
-					<span>이메일 : wjdwo0106@gmail.com</span>
-				</div>
+			<div class="book-wrapper">
+				<ul class="book-list">
+					<li v-for="book in books" :key="book">
+						<img :src="book.img" class="book-image">
+						<h3>{{ book.title }}</h3>
+					</li>
+				</ul>
 			</div>
 		</div>
 	</div>
@@ -23,11 +19,13 @@
 export default {
   data () {
     return {
-			source: ''
+			books: [
+				{ id: 1, title: '나미야잡화점의 기적', img: require('../../assets/namiya.jpg') },
+				{ id: 2, title: '삼국지', img: require('../../assets/sam.jpg') },
+				{ id: 3, title: '유성의인연', img: require('../../assets/you.jpg') },
+				{ id: 4, title: '백야행', img: require('../../assets/white.jpg') },
+			]
     }
-	},
-	created() {
-		this.source = require('../../assets/jjh.jpg')
 	}
 }
 </script>
@@ -42,9 +40,9 @@ export default {
 		left: 0;
 		background: rgba(32, 32, 32, 0.9);
 	}
-
 	.modal-window {
 		width: 500px;
+		height: 800px;
 		padding: 15px;
 		position: absolute;
 		top: 50%;
@@ -54,7 +52,6 @@ export default {
 		background: rgba(44, 62, 80, 0.9);
 		color: #fff;
 	}
-
 	.modal-close-btn {
 		position: absolute;
 		right: -18px;
@@ -64,35 +61,26 @@ export default {
 		cursor: pointer;
 		outline: none;
 	}
-
 	.fa-times-circle {
 		color: #ffb03b;
 	}
-
-	.profile-wrapper {
+	.book-wrapper {
+		overflow: scroll;
+		height: 750px;
+		margin-top: 10px;
+	}
+	.book-list {
+		list-style: none;
 		display: flex;
-		flex-flow: row nowrap;
+		flex-flow: row wrap;
 	}
-
-	.profile-image {
-		width: 30%;
-		margin: 0 0 0 20px;
-	}
-
-	.profile-image img {
+	.book-list li {
 		width: 100%;
-		margin: 0 0 0 15px;
+		overflow: auto;
+		margin-bottom: 20px;
+		margin-right: 15px;
 	}
-
-	.profile-content {
-		display: flex;
-		width: 55%;
-		line-height: 1.9;
-		margin: 20px 0 0 35px;
-		flex-flow: column wrap;
-	}
-
-	.profile-content a {
-		color: #f24c27;
+	.book-image {
+		width: 100%;
 	}
 </style>

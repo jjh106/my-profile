@@ -24,8 +24,8 @@
 							<p class="item-qty">{{ item.price | currency }} x {{ item.qty }}</p>
 						</div>
 						<div class="item-btn">
-							<button class="inc-btn" @click="inc(item, index)"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
-							<button class="dec-btn" @click="dec(item, index)"><i class="fa fa-minus fa-2x" aria-hidden="true"></i></button>
+							<button class="inc-btn" @click="inc(item, index)"><i class="fa fa-plus fa-lg" aria-hidden="true"></i></button>
+							<button class="dec-btn" @click="dec(item, index)"><i class="fa fa-minus fa-lg" aria-hidden="true"></i></button>
 						</div>
 					</li>
 				</ul>
@@ -46,17 +46,16 @@ export default {
 		return {
 			total: 0,
 			items: [
-				{ id: 1, title: 'Item 1', price: 15, img: require('../../assets/github.png') },
-				{ id: 2, title: 'Item 2', price: 10.99, img: require('../../assets/github.png') },
-				{ id: 3, title: 'Item 3', price: 19.89, img: require('../../assets/github.png') },
-				{ id: 4, title: 'Item 4', price: 99.99, img: require('../../assets/github.png') },
-				{ id: 5, title: 'Item 5', price: 50, img: require('../../assets/github.png') },
-				{ id: 6, title: 'Item 6', price: 45, img: require('../../assets/github.png') },
-				{ id: 7, title: 'Item 7', price: 30, img: require('../../assets/github.png') },
-				{ id: 8, title: 'Item 8', price: 20, img: require('../../assets/github.png') }
+				{ id: 1, title: 'classes', price: 50, img: require('../../assets/grafik.jpg') },
+				{ id: 2, title: 'basketball', price: 60, img: require('../../assets/ball.jpg') },
+				{ id: 3, title: 'Ear Phones', price: 20.99, img: require('../../assets/earphone.jpg') },
+				{ id: 4, title: 'HandCream', price: 10.89, img: require('../../assets/handcream.jpg') },
+				{ id: 5, title: 'JavaScript', price: 15, img: require('../../assets/javascript-patterns.png') },
+				{ id: 6, title: 'macbook', price: 200, img: require('../../assets/macbook.png') },
+				{ id: 7, title: 'mug cup', price: 15.89, img: require('../../assets/mug.jpg') },
+				{ id: 8, title: 'React', price: 25, img: require('../../assets/react.jpg') }
 			],
 			cart: [],
-			search: ''
 		}
 	},
 	methods: {
@@ -109,6 +108,9 @@ export default {
 </script>
 
 <style scope>
+	.shop-container {
+		margin-bottom: 30px;
+	}
 	.shop-heading {
 		text-align: center;	
 		margin: 30px 0;
@@ -122,35 +124,36 @@ export default {
 		height: 500px;
 	}
 	.products {
-		width: 50%;
-		/* background: pink; */
+		width: 60%;
 		overflow: auto;
 		display: flex;
 		flex-flow: row wrap;
-		/* border-right: 2px solid #ddd; */
 	}
 	.product {
-		width: 47%;
-		padding: 20px;
+		width: 49%;
+		padding: 20px 20px 10px 20px;
 		margin: 0 auto;
-		border: 1px solid #2c3e50;
-		margin-bottom: 15px;
+		border: 2px solid #2c3e50;
+		margin-bottom: 8px;
 	}
 	.product-flex {
 		display: flex;
+		justify-content: space-around;
+		align-items: center;
 		width: 100%;
 		height: 100px;	
 	}
 	.product-image {
-		width: 50%;
+		width: 100px;
+		height: 90px;
+		margin-right: 10px;
 	}
 	.product-text {
-		width: 50%;
-		padding: 20px 0 0 0;
+		width: 55%;
 		text-align: center;
 	}
 	.product-text h3 {
-		font-size: 1.7rem;
+		font-size: 1.4rem;
 		color: #2c3e50;
 	}
 	.product-text span {
@@ -161,8 +164,8 @@ export default {
 	.go-cart {
 		width: 100%;
 		border: 2px solid #2c3e50;
-		padding: 10px 0;
-		margin-top: 10px;
+		padding: 5px 0;
+		margin-top: 15px;
 		font-size: 1rem;
 		border-radius: 10px; 
 	}
@@ -180,18 +183,18 @@ export default {
 	.cart {
 		text-align: center;
 		height: auto;
-		width: 50%;
+		width: 40%;
 		overflow: auto;
 	}
 	.total-price {
 		position: fixed;
 		bottom: 400px;
-		right: 32px;
+		right: 1px;
 		background: #fff;
 		font-size: 1.2rem;
 		font-weight: bold;
 		color: #2c3e50;
-		padding: 50px;
+		padding: 30px;
 		border-radius: 5px;
 	}
 	.cart h2 {
@@ -210,9 +213,10 @@ export default {
 		border-radius: 10px;
 		padding: 10px;
 		box-shadow: 2px 2px 4px #bbb, 4px 4px 8px #bbb;
-		width: 75%;
+		width: 90%;
 		display: flex;
-		justify-content: center;
+		justify-content: space-around;
+		align-items: center;
 	}
 	.item-image {
 		width: 80px;
@@ -227,14 +231,13 @@ export default {
 		font-weight: 600;
 	}
 	.item-text {
-		margin: 10px 20px 10px 20px;
+		/* margin: 10px 20px 10px 20px; */
 	}
 	.item-btn {
-		 padding: 17px 10px 0 10px;
+		  /* margin: 17px 0 0 0;  */
 	}
 	.inc-btn {
 		border: 2px solid #000;
-		margin-right: 5px;
 		padding: 3px 5px;
 		border-radius: 5px;
 	}

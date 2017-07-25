@@ -102,7 +102,7 @@ export default {
 		color: #ffb03b;
 	}
 	.fa-trash-o {
-		color: #bd4932;
+		color: #f0788c;
 		vertical-align: top;
 	}
 	.taskDone {

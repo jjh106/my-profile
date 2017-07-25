@@ -12,7 +12,7 @@ import ShoppingCart from './ShoppingCart.vue'
 export default {
 	data() {
 		return {
-			msg: '평소에 관심있는 아이템을 기록하는 장바구니 페이지입니다.'
+			msg: '평소에 관심 있는 아이템을 저장해 놓는 장바구니 페이지입니다.'
 		}
 	},
 	components: {

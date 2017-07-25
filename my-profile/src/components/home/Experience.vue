@@ -17,9 +17,9 @@ export default {
     }
 	},
 	created() {
-		this.source1 = require('../../assets/paris.jpg')
-		this.source2 = require('../../assets/rio.jpg')
-		this.source3 = require('../../assets/san.jpg')
+		this.source1 = require('../../assets/land.jpg')
+		this.source2 = require('../../assets/coffee.jpg')
+		this.source3 = require('../../assets/fds.jpg')
 	}
 }
 </script>
@@ -72,15 +72,18 @@ export default {
 	}
 
 	.major-image::after {
-		content: 'Tokyo';
+		content: '조경학과 졸업';
+		font-size: 1.2rem;
 	}
 
 	.intern-image::after {
-		content: 'Home';
+		content: '아르바이트';
+		font-size: 1.2rem;
 	}
 
 	.fds-image::after {
-		content: 'Mountain';
+		content: '패스트캠퍼스 프론트엔드스쿨';
+		font-size: 1.2rem;
 	}
 
 	.intern-image {

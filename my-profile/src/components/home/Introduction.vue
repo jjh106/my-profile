@@ -6,7 +6,6 @@
 			<profile-modal v-if="isShowPmodal" @close="hidePmodal"></profile-modal>
 			<div class="story-image" :style="{ backgroundImage: 'url(' + source2 + ')' }" @click="showSmodal"></div>
 			<story-modal v-if="isShowSmodal" @close="hideSmodal"></story-modal>
-			<div class="dd-image" :style="{ backgroundImage: 'url(' + source3 + ')' }"></div>
 		</div>
 	</div>
 </template>
@@ -26,9 +25,9 @@ export default {
     }
 	},
 	created() {
-		this.source1 = require('../../assets/paris.jpg')
-		this.source2 = require('../../assets/rio.jpg')
-		this.source3 = require('../../assets/san.jpg')
+		this.source1 = require('../../assets/jjh2.jpg')
+		this.source2 = require('../../assets/puzzle.jpg')
+
 	},
 	methods: {
 		showPmodal() {
