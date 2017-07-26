@@ -42,7 +42,7 @@ export default {
 	}
 	.modal-window {
 		width: 500px;
-		height: 800px;
+		height: 700px;
 		padding: 15px;
 		position: absolute;
 		top: 50%;
@@ -66,7 +66,7 @@ export default {
 	}
 	.game-wrapper {
 		overflow: scroll;
-		height: 750px;
+		height: 650px;
 		margin-top: 10px;
 	}
 	.game-list {

@@ -6,7 +6,8 @@
 			<land-modal v-if="isShowLmodal" @close="hideLmodal"></land-modal>
 			<div class="intern-image" :style="{ backgroundImage: 'url(' + source2 + ')' }" @click="showImodal"><i class="fa fa-plus plus-plus fa-2x" aria-hidden="true"></i></div>
 			<intern-modal v-if="isShowImodal" @close="hideImodal"></intern-modal>
-			<div class="fds-image" :style="{ backgroundImage: 'url(' + source3 + ')' }"></div>
+			<div class="fds-image" :style="{ backgroundImage: 'url(' + source3 + ')' }" @click="showDmodal"><i class="fa fa-plus plus-plus fa-2x" aria-hidden="true"></i></div>
+			<fds-modal v-if="isShowDmodal" @close="hideDmodal"></fds-modal>
 		</div>
 	</div>
 </template>
@@ -14,12 +15,14 @@
 <script>
 import LandModal from './LandModal.vue'
 import InternModal from './InternModal.vue'
+import FdsModal from './FdsModal.vue'
 
 export default {
   data () {
     return {
 			isShowLmodal: false,
-			isShowImodal: false
+			isShowImodal: false,
+			isShowDmodal: false
     }
 	},
 	created() {
@@ -29,7 +32,8 @@ export default {
 	},
 	components: {
 		LandModal,
-		InternModal
+		InternModal,
+		FdsModal
 	},
 	methods: {
 		showLmodal() {
@@ -43,6 +47,12 @@ export default {
 		},
 		hideImodal() {
 			this.isShowImodal = false;
+		},
+		showDmodal() {
+			this.isShowDmodal = true;
+		},
+		hideDmodal() {
+			this.isShowDmodal = false;
 		}
 	}
 }
@@ -72,7 +82,7 @@ export default {
 		background-repeat: no-repeat;
 		width: 30%;
 		padding-bottom: 25%;
-		 border-radius: 5px; 
+		border-radius: 5px; 
 	}
 
 	[class*="-image"]::after {
@@ -86,7 +96,7 @@ export default {
 		font-size: 1.6rem;
 		color: #fff;
 		opacity: 0; 
-		 border-radius: 5px; 
+		border-radius: 5px; 
 		cursor: pointer;
 	}
 
@@ -106,7 +116,7 @@ export default {
 	}
 
 	.fds-image::after {
-		content: '패스트캠퍼스 프론트엔드스쿨3기 수료';
+		content: '패스트캠퍼스 프론트엔드스쿨';
 		font-size: 1.2rem;
 	}
 

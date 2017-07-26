@@ -1,11 +1,14 @@
 <template>
 	<div class="works-wrapper">
 		<intro :parentMsg="msg"></intro>
+		<project></project>
 	</div>
 </template>
 
 <script>
 import Intro from '../Intro.vue'
+import Project from './Project.vue'
+
 export default {
   data () {
     return {
@@ -13,7 +16,8 @@ export default {
     }
 	},
 	components: {
-		Intro
+		Intro,
+		Project
 	}
 }
 </script>

@@ -2,11 +2,11 @@
 	<div class="modal-dim">
 		<div class="modal-window">
 			<button class="modal-close-btn" type="button" @click="$emit('close')"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></button>
-			<div class="trip-wrapper">
-				<ul class="trip-list">
-					<li v-for="trip in trips" :key="trip">
-						<img :src="trip.img" class="trip-image">
-						<h3>{{ trip.title }}</h3>
+			<div class="fds-wrapper">
+				<ul class="fds-list">
+					<li v-for="fds in fdss" :key="fds">
+						<img :src="fds.img" class="fds-image">
+						<h3>{{ fds.title }}</h3>
 					</li>
 				</ul>
 			</div>
@@ -19,12 +19,10 @@
 export default {
   data () {
     return {
-			trips: [
-				{ id: 1, title: 'Germany', img: require('../../assets/germany.jpg') },
-				{ id: 2, title: 'Japan', img: require('../../assets/japan.jpg') },
-				{ id: 3, title: 'Switzerland', img: require('../../assets/switzerland.jpg') },
-				{ id: 4, title: 'Austria', img: require('../../assets/austria.jpg') },
-				{ id: 5, title: 'France', img: require('../../assets/france.jpg') }
+			fdss: [
+				{ id: 1, title: '네트워킹 세션', img: require('../../assets/fds1.jpg') },
+				{ id: 2, title: '팀 프로젝트 MVP 계획', img: require('../../assets/fds2.jpg') },
+				{ id: 3, title: 'ios,안드로이드,백엔드,프론트엔드 팀 미팅', img: require('../../assets/fds3.jpg') }
 			]
     }
 	}
@@ -65,23 +63,29 @@ export default {
 	.fa-times-circle {
 		color: #ffb03b;
 	}
-	.trip-wrapper {
+	.fds-wrapper {
 		overflow: scroll;
 		height: 650px;
 		margin-top: 10px;
 	}
-	.trip-list {
+	.fds-list {
 		list-style: none;
 		display: flex;
 		flex-flow: row wrap;
 	}
-	.trip-list li {
+	.fds-list h3 {
+		margin-bottom: 10px;
+	}
+	.fds-list img {
+		margin-bottom: 10px;
+	}
+	.fds-list li {
 		width: 100%;
 		overflow: auto;
 		margin-bottom: 20px;
 		margin-right: 15px;
 	}
-	.trip-image {
+	.fds-image {
 		width: 100%;
 	}
 </style>
