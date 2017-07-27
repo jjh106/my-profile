@@ -50,7 +50,7 @@ export default {
 		border-radius: 10px;
 	}
 	.project-image {
-		width: 25%;
+		width: 22%;
 		height: 150px;
 		border-radius: 50%;
 		margin: 10px 50px 10px 100px;

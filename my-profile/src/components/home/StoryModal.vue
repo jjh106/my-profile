@@ -2,18 +2,8 @@
 	<div class="modal-dim">
 		<div class="modal-window">
 			<button class="modal-close-btn" type="button" @click="$emit('close')"><i class="fa fa-times-circle fa-3x" aria-hidden="true"></i></button>
-			<p>fdsfadsfsdfadsfsadfasfasfasfasdfsadfsdfsadfdsfaas
-				fsadfsadfsdafsadfsdffsdfsdafsdafsdafasdfdsfsafsadf
-				afsdfsdafsdfsdfsdafsadfsadfsadfsdfsdfsdfdsfsdfdsfsa
-				fsadfsdfsdfsadfsadfsfsafsfsfsfsafsdafsfsdfsafsdfsdfsa
-				fsdfsdfsfsdfsdfsdafdsfsdfsdfsafsdafsdfsdfsfsdfsdafsdfas
-				fsdfsdafsdafsdfsdfsdafsdafsdfsadfsadfsadfsafsafsadfs
-				fsdafafsdafasfdfsdfsdafsdafsdfsdafsadfsdafsdfsdfsdfsdfsaf
-				fasdfsadfsadfsadfsadfsdfsadfsadfsdafsdfsafsdafsadfsafsdf
-				fasdfsadfsdafsdafsadfsdfsdfsafsadfsdafsdafsdafsadfsa
-				fsadfsadfsadfsdfsadfsadfsafsafasdfasfsdafa
-				fasdfsdafsadfsdfsadfsdafsadfsdfsdfsdafsafsadfsadfsaf
-				sdfsadfsdafsdafsdafsdafsadfsadfsadfsdfsafsafdas
+			<p class="story-content">
+				
 			</p>
 		</div>
 	</div>

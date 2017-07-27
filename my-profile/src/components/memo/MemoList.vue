@@ -2,7 +2,7 @@
 	<div class="memo-list-wrapper">
 		<h2>Todo List</h2>
 		<div class="memo-input">
-			<input type="text" placeholder="할 일을 적어주세요." v-model="task" @keyup.enter="addItem">
+			<input type="text" placeholder="할 일을 입력하세요." v-model="task" @keyup.enter="addItem">
 			<button type="button" @click="addItem"><i class="fa fa-plus fa-2x" aria-hidden="true"></i></button>
 		</div>
 			<ul class="memo-list">
