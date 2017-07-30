@@ -1,32 +1,32 @@
 <template>
 	<div class="introduction-wrapper">
-		<h2 class="introduction-heading">Introduction</h2>
+		<h2 class="introduction-heading">Profile</h2>
 		<div class="image-wrapper">
 			<div class="profile-image" :style="{ backgroundImage: 'url(' + source1 + ')' }" @click="showPmodal"></div>
 			<profile-modal v-if="isShowPmodal" @close="hidePmodal"></profile-modal>
-			<div class="story-image" :style="{ backgroundImage: 'url(' + source2 + ')' }" @click="showSmodal"></div>
-			<story-modal v-if="isShowSmodal" @close="hideSmodal"></story-modal>
+			<!-- <div class="story-image" :style="{ backgroundImage: 'url(' + source2 + ')' }" @click="showSmodal"></div> -->
+			<!-- <story-modal v-if="isShowSmodal" @close="hideSmodal"></story-modal> -->
 		</div>
 	</div>
 </template>
 
 <script>
 import ProfileModal from './ProfileModal.vue'
-import StoryModal from './StoryModal.vue'
+// import StoryModal from './StoryModal.vue'
 export default {
 	components: {
 		ProfileModal,
-		StoryModal
+		// StoryModal
 	},
   data () {
     return {
 			isShowPmodal: false,
-			isShowSmodal: false
+			// isShowSmodal: false
     }
 	},
 	created() {
 		this.source1 = require('../../assets/jjh2.jpg')
-		this.source2 = require('../../assets/puzzle.jpg')
+		// this.source2 = require('../../assets/puzzle.jpg')
 
 	},
 	methods: {
@@ -35,13 +35,13 @@ export default {
 		},
 		hidePmodal() {
 			this.isShowPmodal = false;
-		},
-		showSmodal() {
-			this.isShowSmodal = true;
-		},
-		hideSmodal() {
-			this.isShowSmodal = false;
 		}
+		// showSmodal() {
+		// 	this.isShowSmodal = true;
+		// },
+		// hideSmodal() {
+		// 	this.isShowSmodal = false;
+		// }
 	}
 }
 </script>
@@ -97,15 +97,11 @@ export default {
 		content: 'Click!! My Profile';
 	}
 
-	.story-image::after {
-		content: 'Click!! My Story';
-	}
+	/* .story-image::after {
+		content: 'Click!! My Objective';
+	} */
 
-	.dd-image::after {
-		content: 'Mountain';
-	}
-
-	.story-image {
+	/* .story-image {
 		 margin: 0 30px; 
-	}
+	} */
 </style>
