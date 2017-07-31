@@ -2,7 +2,7 @@
 
 *vue.js를 활용한 나에 관한 웹페이지 제작 프로젝트*
 
-
+**동영상 링크** : https://youtu.be/avz1ycIblYY
 
 ### # 컨텐츠 기획
 
